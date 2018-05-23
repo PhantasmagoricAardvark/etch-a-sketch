@@ -16,25 +16,36 @@
 	<script type="text/javascript">
 
 		
-		
+		let mainDiv = document.querySelector(".container")
 
 		for (var i = 1;i <= 16*16; i++) {
 			let div = document.createElement("div")
 			div.style.height = "20px";
 			div.style.width = "20px";
 			div.className = "blockDiv"
-			div.textContent = i
-			
-
 
 
 			let mainDiv = document.querySelector(".container")
 			mainDiv.appendChild(div)
 
-			
-
-
 		}
+
+
+		let w = document.getElementsByClassName("blockDiv")
+
+		for (var i = 0; i < 256; i++) {
+			w[i].style.background = "red"
+			
+		}
+
+
+		
+
+
+
+		
+
+
 
 		
 		
@@ -53,3 +64,4 @@
 
 </body>
 </html>
+
