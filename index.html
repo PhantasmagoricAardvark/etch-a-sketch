@@ -30,15 +30,56 @@
 
 		}
 
+		let blockDiv = mainDiv.childNodes
 
-		let w = document.getElementsByClassName("blockDiv")
+		let array1 = []
 
-		for (var i = 0; i < 256; i++) {
-			w[i].style.background = "red"
+
+
+		for (var j = 0; j < 256; j++) {
+			
+			blockDiv[j].addEventListener("mouseenter",colorChange)
+			
+
+		}
+
+		function colorChange() {
+			
 			
 		}
 
+		
+	
 
+	
+		
+		blockDiv[1].addEventListener("mouseenter", function() { blockDiv[1].style.background = "red"})
+		blockDiv[2].addEventListener("mouseenter", function() { blockDiv[2].style.background = "red"})
+		blockDiv[3].addEventListener("mouseenter", function() { blockDiv[3].style.background = "red"})
+		blockDiv[4].addEventListener("mouseenter", function() { blockDiv[4].style.background = "red"})
+		blockDiv[5].addEventListener("mouseenter", function() { blockDiv[5].style.background = "red"})
+		blockDiv[6].addEventListener("mouseenter", function() { blockDiv[6].style.background = "red"})
+		blockDiv[7].addEventListener("mouseenter", function() { blockDiv[7].style.background = "red"})
+		blockDiv[8].addEventListener("mouseenter", function() { blockDiv[8].style.background = "red"})
+		blockDiv[9].addEventListener("mouseenter", function() { blockDiv[9].style.background = "red"})
+		blockDiv[10].addEventListener("mouseenter", function() { blockDiv[10].style.background = "red"})
+		blockDiv[11].addEventListener("mouseenter", function() { blockDiv[11].style.background = "red"})
+		blockDiv[12].addEventListener("mouseenter", function() { blockDiv[12].style.background = "red"})
+		blockDiv[13].addEventListener("mouseenter", function() { blockDiv[13].style.background = "red"})
+		blockDiv[14].addEventListener("mouseenter", function() { blockDiv[14].style.background = "red"})
+		blockDiv[15].addEventListener("mouseenter", function() { blockDiv[15].style.background = "red"})
+		blockDiv[16].addEventListener("mouseenter", function() { blockDiv[16].style.background = "red"})
+		blockDiv[17].addEventListener("mouseenter", function() { blockDiv[17].style.background = "red"})
+		blockDiv[18].addEventListener("mouseenter", function() { blockDiv[18].style.background = "red"})
+		blockDiv[19].addEventListener("mouseenter", function() { blockDiv[19].style.background = "red"})
+		blockDiv[20].addEventListener("mouseenter", function() { blockDiv[20].style.background = "red"})
+		blockDiv[21].addEventListener("mouseenter", function() { blockDiv[21].style.background = "red"})
+		blockDiv[22].addEventListener("mouseenter", function() { blockDiv[22].style.background = "red"})
+		blockDiv[23].addEventListener("mouseenter", function() { blockDiv[23].style.background = "red"})
+		blockDiv[24].addEventListener("mouseenter", function() { blockDiv[24].style.background = "red"})
+		blockDiv[25].addEventListener("mouseenter", function() { blockDiv[25].style.background = "red"})
+
+		
 		
 
 
@@ -59,7 +100,13 @@
 
 
 
+function colorChange() {
+			for (var j = 0; j < 256; j++) {
+			let hoverColor = document.querySelectorAll(".color")
+			hoverColor[j].style.background = "red"
 
+			}
+		}
 
 
 </body>
