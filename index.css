@@ -1,8 +1,13 @@
 .container {
-	float: left;
+	
 	max-width: 352px;
 	margin: 0;
 	padding: 0;
+
+	position: absolute;
+	left: 50%;	
+	top:30%;
+	transform: translate(-50%, -30%);
 }
 
 
@@ -19,5 +24,14 @@
 
 .color {
 	background-color: red;
+}
+
+.button {
+	height: 100px;
+	width: 100px;
+	margin: 0 auto;
+	padding: 0; 
+	float: right;
+
 }
 
