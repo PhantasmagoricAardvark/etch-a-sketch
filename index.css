@@ -1,6 +1,7 @@
 .container {
 	
-	max-width: 352px;
+	width: 640px;
+	height: 640px;
 	margin: 0;
 	padding: 0;
 
@@ -8,6 +9,7 @@
 	left: 50%;	
 	top:30%;
 	transform: translate(-50%, -30%);
+	border: 2px solid purple;
 }
 
 
@@ -35,3 +37,14 @@
 
 }
 
+.gridSize {
+	height: 100px;
+	width: 100px;
+	margin: 0 auto;
+	padding: 0;
+	position: absolute;
+	right: 8px;
+	top: 110px;
+
+
+}

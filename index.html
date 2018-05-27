@@ -25,12 +25,20 @@
 
 		body.appendChild(button)
 
+		let gridSize = document.createElement("button")
+		gridSize.classList.add("gridSize")
+		gridSize.textContent = "new grid size"
 
-		for (var i = 1;i <= 16*16; i++) {
+		body.appendChild(gridSize)
+
+
+
+		for (var i = 1;i <= 64*64; i++) {
 			let div = document.createElement("div")
-			div.style.height = "20px";
-			div.style.width = "20px";
+			div.style.height = "8px";
+			div.style.width = "8px";
 			div.className = "blockDiv"
+			div.classList.add(i)
 
 
 			mainDiv.appendChild(div)
@@ -67,9 +75,46 @@
 		}
 
 
-		let selectButton = document.querySelector("button")
 
+		function gridGenerator() {
+			blcs = prompt("Enter a number for a new grid size? 64 = 64x64")
+
+
+			//Add 2 variables that increment.
+			body.removeChild(mainDiv)
+
+
+			let gridContainer =  document.createElement("div")
+			gridContainer.classList.add("container")		 
+			body.appendChild(gridContainer)
+
+			let gridH = (640/blcs) - 2;
+			gridH.toString
+
+
+
+
+
+			for (var i = 1;i <= blcs*blcs; i++) {
+				let newGrid = document.createElement("div")
+				newGrid.style.height = gridH + "px";
+				newGrid.style.width = gridH + "px";
+				newGrid.className = "blockDiv"
+				newGrid.classList.add(i)
+
+
+				gridContainer.appendChild(newGrid)
+
+			}
+
+
+		}
+
+		let selectButton = document.querySelector("button")
 		selectButton.addEventListener("click", clearGrid)
+
+		let gridSizeButton = document.querySelector(".gridSize")
+		gridSizeButton.addEventListener("click", gridGenerator)
 
 
 	</script>
