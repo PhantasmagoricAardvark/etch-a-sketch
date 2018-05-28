@@ -77,20 +77,22 @@
 
 
 		function gridGenerator() {
-			blcs = prompt("Enter a number for a new grid size? 64 = 64x64")
+			let blcs = prompt("Enter a number for a new grid size? 64 = 64x64")
+			
 
-
-			//Add 2 variables that increment.
 			body.removeChild(mainDiv)
 
+			
 
 			let gridContainer =  document.createElement("div")
+			gridContainer = num2++
 			gridContainer.classList.add("container")		 
 			body.appendChild(gridContainer)
 
 			let gridH = (640/blcs) - 2;
 			gridH.toString
 
+			console.log(gridContainer + ++num2)
 
 
 
@@ -115,6 +117,19 @@
 
 		let gridSizeButton = document.querySelector(".gridSize")
 		gridSizeButton.addEventListener("click", gridGenerator)
+
+
+		
+		function gridVarGenerator() {
+  		 	var gridNum = [];
+  			for (var i = 0; i < 256; i++) {
+   		    gridNum[i] = "grid" + i;
+    	    
+    	    }
+        return gridNum;
+}
+
+// Use gridNum[i] as the new variable for the grid generator
 
 
 	</script>
