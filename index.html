@@ -25,18 +25,18 @@
 
 		body.appendChild(button)
 
-		let gridSize = document.createElement("button")
-		gridSize.classList.add("gridSize")
-		gridSize.textContent = "new grid size"
+		let gridSizeButton = document.createElement("button")
+		gridSizeButton.classList.add("gridSizeButton")
+		gridSizeButton.textContent = "new grid size"
 
-		body.appendChild(gridSize)
+		body.appendChild(gridSizeButton)
 
 
 
-		for (var i = 1;i <= 64*64; i++) {
+		for (var i = 1;i <= 16*16; i++) {
 			let div = document.createElement("div")
-			div.style.height = "8px";
-			div.style.width = "8px";
+			div.style.height = "38px";
+			div.style.width = "38px";
 			div.className = "blockDiv"
 			div.classList.add(i)
 
@@ -78,58 +78,58 @@
 
 		function gridGenerator() {
 			let blcs = prompt("Enter a number for a new grid size? 64 = 64x64")
-			
-
-			body.removeChild(mainDiv)
-
-			
-
-			let gridContainer =  document.createElement("div")
-			gridContainer = num2++
-			gridContainer.classList.add("container")		 
-			body.appendChild(gridContainer)
-
+		
 			let gridH = (640/blcs) - 2;
-			gridH.toString
+			gridHeightRounded = Math.floor(gridH*10)/10			
+			gridHeightRounded.toString()
 
-			console.log(gridContainer + ++num2)
 
 
 
 
 			for (var i = 1;i <= blcs*blcs; i++) {
 				let newGrid = document.createElement("div")
-				newGrid.style.height = gridH + "px";
-				newGrid.style.width = gridH + "px";
+				newGrid.style.height = gridHeightRounded + "px";
+				newGrid.style.width = gridHeightRounded + "px";
 				newGrid.className = "blockDiv"
 				newGrid.classList.add(i)
+				console.log(newGrid.style.height)
 
 
-				gridContainer.appendChild(newGrid)
+				mainDiv.appendChild(newGrid)
 
 			}
 
 
 		}
 
+
+
+		function removeBlocks() {
+			while (mainDiv.firstChild) {
+				mainDiv.removeChild(mainDiv.firstChild)
+			}
+		}
+
+
+
+
+
 		let selectButton = document.querySelector("button")
 		selectButton.addEventListener("click", clearGrid)
 
-		let gridSizeButton = document.querySelector(".gridSize")
+	
+		gridSizeButton.addEventListener("click", removeBlocks)
 		gridSizeButton.addEventListener("click", gridGenerator)
+
+	
+
+		
 
 
 		
-		function gridVarGenerator() {
-  		 	var gridNum = [];
-  			for (var i = 0; i < 256; i++) {
-   		    gridNum[i] = "grid" + i;
-    	    
-    	    }
-        return gridNum;
-}
+		
 
-// Use gridNum[i] as the new variable for the grid generator
 
 
 	</script>
