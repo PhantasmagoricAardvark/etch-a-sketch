@@ -33,7 +33,7 @@
 
 
 
-		for (var i = 1;i <= 16*16; i++) {
+		for (let i = 1;i <= 16*16; i++) {
 			let div = document.createElement("div")
 			div.style.height = "38px";
 			div.style.width = "38px";
@@ -45,10 +45,12 @@
 
 		}
 
+
 		let blockDiv = mainDiv.childNodes
 		let array1 = []
 
-		for (var j = 0; j < 256; j++) {
+
+		for (let j = 0; j < 256; j++) {
 			
 			array1.push(j)
 								
@@ -56,17 +58,25 @@
 		}
 
 
-		for (var j = 0; j < 256; j++) {
+
+		let num = 0
+
+
+		for (let j = 0; j < 256; j++) {
+			let add = 0
+
+
+			console.log(num)
+					
+			blockDiv[j].addEventListener("mouseenter", function () {blockDiv[j].classList.add("black10")})
 			
-			let index = array1[j]
-			blockDiv[index].addEventListener("mouseenter", function() { blockDiv[index].style.background = "red"})
-
-
 		}
 
 
+
+
 		function clearGrid() {
-			for (var j = 0; j < 256; j++) {
+			for (let j = 0; j < 256*256; j++) {
 			
 			blockDiv[j].style.background = "white"
 
@@ -101,7 +111,24 @@
 			}
 
 
+			let array2 = []
+
+			for (var k = 0; k < blcs*blcs; k++) {
+				array2.push(k)
+				let index2 = array2[k]
+				blockDiv[index2].addEventListener("mouseenter", function() { blockDiv[index2].style.background = "red"})
+
+			}
+
+
+
 		}
+
+
+		
+
+
+
 
 
 
@@ -110,9 +137,41 @@
 				mainDiv.removeChild(mainDiv.firstChild)
 			}
 		}
+		
 
 
 
+		function onMouseHover() {
+
+			
+			num++
+			console.log(num)
+			if (num == 1) {
+				blockDiv[k].style.background = "#e6e6e6"
+			} else if (num == 2) {
+				blockDiv[k].style.background = "#cccccc"
+			} else if (num == 3) {
+				blockDiv[k].style.background = "#b3b3b3"
+			} else if (num == 4) {
+				blockDiv[k].style.background = "#999999"
+			} else if (num == 5) {
+				blockDiv[k].style.background = "#808080"
+			} else if (num == 6) {
+				blockDiv[k].style.background = "#666666"
+			} else if (num == 7) {
+				blockDiv[k].style.background = "#4d4d4d"
+			} else if (num == 8) {
+				blockDiv[k].style.background = "#333333"
+			} else if (num == 9) {
+				blockDiv[k].style.background = "#1a1a1a"
+			} else if (num == 10) {
+				blockDiv[40].style.background = "#000000"
+			}
+		}
+
+
+
+		
 
 
 		let selectButton = document.querySelector("button")
@@ -121,7 +180,7 @@
 	
 		gridSizeButton.addEventListener("click", removeBlocks)
 		gridSizeButton.addEventListener("click", gridGenerator)
-
+		blockDiv[40].addEventListener("mouseenter", function () {num =+ 1})
 	
 
 		
