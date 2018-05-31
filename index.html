@@ -58,19 +58,35 @@
 		}
 
 
-
-		let num = 0
-
-
-		for (let j = 0; j < 256; j++) {
-			let add = 0
+		
 
 
-			console.log(num)
+		for (let k = 0; k < 256; k++) {
+
+
 					
-			blockDiv[j].addEventListener("mouseenter", function () {blockDiv[j].classList.add("black10")})
+			blockDiv[k].addEventListener("mouseenter", function () {blockDiv[k].classList.add("black10")})
+
+			
 			
 		}
+
+
+		numArray = []
+  		
+  		for (var i = 0; i < 256; i++) {
+   		    numArray[i]  = "num" + i;
+   		}
+
+
+    	numArray.fill(0)
+
+
+
+    	
+
+
+
 
 
 
@@ -141,33 +157,50 @@
 
 
 
-		function onMouseHover() {
+		function onMouseHover40() {
+
 
 			
-			num++
-			console.log(num)
-			if (num == 1) {
-				blockDiv[k].style.background = "#e6e6e6"
-			} else if (num == 2) {
-				blockDiv[k].style.background = "#cccccc"
-			} else if (num == 3) {
-				blockDiv[k].style.background = "#b3b3b3"
-			} else if (num == 4) {
-				blockDiv[k].style.background = "#999999"
-			} else if (num == 5) {
-				blockDiv[k].style.background = "#808080"
-			} else if (num == 6) {
-				blockDiv[k].style.background = "#666666"
-			} else if (num == 7) {
-				blockDiv[k].style.background = "#4d4d4d"
-			} else if (num == 8) {
-				blockDiv[k].style.background = "#333333"
-			} else if (num == 9) {
-				blockDiv[k].style.background = "#1a1a1a"
-			} else if (num == 10) {
-				blockDiv[40].style.background = "#000000"
+			numArray[40]++
+			console.log(numArray[40])
+			if (numArray[40] == 1) {
+				blockDiv[40].classList.add("black10")
+			} else if (numArray[40] == 2) {
+				blockDiv[40].classList.add("black20")
 			}
 		}
+
+		function onMouseHover39() {
+
+
+			
+			numArray[39]++
+			console.log(numArray[39])
+			if (numArray[39] == 1) {
+				blockDiv[39].classList.add("black10")
+			} else if (numArray[39] == 2) {
+				blockDiv[39].classList.add("black20")
+			}
+		}
+
+		function onMouseHover() {
+			for (var i = 0; i < 256; i++) {
+			numArray[i]++
+			console.log(numArray[i])
+			if (numArray[i] == 1) {
+				blockDiv[i].classList.add("black10")
+			} else if (numArray[i] == 2) {
+				blockDiv[i].classList.add("black20")
+			}
+   		}
+
+
+
+
+
+		}
+
+
 
 
 
@@ -180,7 +213,13 @@
 	
 		gridSizeButton.addEventListener("click", removeBlocks)
 		gridSizeButton.addEventListener("click", gridGenerator)
-		blockDiv[40].addEventListener("mouseenter", function () {num =+ 1})
+
+
+
+		blockDiv[39].addEventListener("mouseenter", onMouseHover39)
+		blockDiv[40].addEventListener("mouseenter", onMouseHover40)
+		blockDiv[60].addEventListener("mouseenter", onMouseHover)
+	
 	
 
 		
