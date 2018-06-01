@@ -61,11 +61,12 @@
 		
 
 
-		for (let k = 0; k < 256; k++) {
-
+		for (let k = 0; k < 256; ++k) {
+			
 
 					
-			blockDiv[k].addEventListener("mouseenter", function () {blockDiv[k].classList.add("black10")})
+			blockDiv[k].addEventListener("mouseenter", function() {numArray[k]++})
+			blockDiv[k].addEventListener("mouseenter", onMouseHover)
 
 			
 			
@@ -83,6 +84,8 @@
 
 
 
+
+
     	
 
 
@@ -92,13 +95,40 @@
 
 
 		function clearGrid() {
-			for (let j = 0; j < 256*256; j++) {
+			for (let k = 0; k < 256; k++) {
+			blockDiv[k].classList.remove("black10")
+			blockDiv[k].classList.remove("black20")
+			blockDiv[k].classList.remove("black30")
+			blockDiv[k].classList.remove("black40")
+			blockDiv[k].classList.remove("black50")
+			blockDiv[k].classList.remove("black60")
+			blockDiv[k].classList.remove("black70")
+			blockDiv[k].classList.remove("black80")
+			blockDiv[k].classList.remove("black90")
+			blockDiv[k].classList.remove("black100")
+
+
+
 			
-			blockDiv[j].style.background = "white"
-
-
 			}
+			numArray.fill(0)
+
+			for (let k = 0; k < 256; ++k) {
+			
+
+					
+			blockDiv[k].addEventListener("mouseenter", function() {numArray[k]++})
+			blockDiv[k].addEventListener("mouseenter", onMouseHover)
+			bl
+
+			
+			
 		}
+
+
+			
+		}
+		
 
 
 
@@ -132,7 +162,11 @@
 			for (var k = 0; k < blcs*blcs; k++) {
 				array2.push(k)
 				let index2 = array2[k]
-				blockDiv[index2].addEventListener("mouseenter", function() { blockDiv[index2].style.background = "red"})
+
+				blockDiv[index2].addEventListener("mouseenter", function() {numArray[index2]++})				
+				blockDiv[index2].addEventListener("mouseenter", onMouseHover)
+
+
 
 			}
 
@@ -170,35 +204,41 @@
 			}
 		}
 
-		function onMouseHover39() {
-
-
-			
-			numArray[39]++
-			console.log(numArray[39])
-			if (numArray[39] == 1) {
-				blockDiv[39].classList.add("black10")
-			} else if (numArray[39] == 2) {
-				blockDiv[39].classList.add("black20")
-			}
-		}
+		
 
 		function onMouseHover() {
-			for (var i = 0; i < 256; i++) {
-			numArray[i]++
-			console.log(numArray[i])
+			
+
+
+			for (let i = 0; i < 256*256; i++) {
 			if (numArray[i] == 1) {
 				blockDiv[i].classList.add("black10")
 			} else if (numArray[i] == 2) {
 				blockDiv[i].classList.add("black20")
+			} else if (numArray[i] == 3) {
+				blockDiv[i].classList.add("black30")
+			} else if (numArray[i] == 4) {
+				blockDiv[i].classList.add("black40")
+			} else if (numArray[i] == 5) {
+				blockDiv[i].classList.add("black50")
+			} else if (numArray[i] == 6) {
+				blockDiv[i].classList.add("black60")
+			} else if (numArray[i] == 7) {
+				blockDiv[i].classList.add("black70")
+			} else if (numArray[i] == 8) {
+				blockDiv[i].classList.add("black80")
+			} else if (numArray[i] == 9) {
+				blockDiv[i].classList.add("black90")
+			} else if (numArray[i] == 10) {
+				blockDiv[i].classList.add("black100")
 			}
-   		}
-
-
+   			
+   			}
 
 
 
 		}
+
 
 
 
@@ -215,19 +255,7 @@
 		gridSizeButton.addEventListener("click", gridGenerator)
 
 
-
-		blockDiv[39].addEventListener("mouseenter", onMouseHover39)
-		blockDiv[40].addEventListener("mouseenter", onMouseHover40)
-		blockDiv[60].addEventListener("mouseenter", onMouseHover)
-	
-	
-
 		
-
-
-		
-		
-
 
 
 	</script>

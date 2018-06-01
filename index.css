@@ -55,5 +55,45 @@
 }
 
 .black20 {
+	background-color: #cccccc;
+}
+
+.black30 {
+	background-color: #b3b3b3;
+
+}
+
+.black40 {
+	background-color: #999999;
+
+}
+
+.black50 {
+	background-color: #808080;
+}
+
+.black60 {
+	background-color: #666666;
+}
+
+.black70 {
+	background-color: #4d4d4d;
+}
+
+.black80 {
 	background-color: #333333;
+}
+
+.black90 {
+	background-color: #1a1a1a;
+}
+
+.black100 {
+	background-color: #000000;
+}
+
+
+
+.white {
+	background-color: white;
 }
