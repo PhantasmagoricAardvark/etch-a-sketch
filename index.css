@@ -49,6 +49,20 @@
 
 }
 
+.colorButton {
+	height: 100px;
+	width: 100px;
+	margin: 0 auto;
+	padding: 0;
+	position: absolute;
+	right: 8px;
+	top: 212px;
+
+}
+
+
+
+
 
 .black10 {
 	background-color: #e6e6e6;

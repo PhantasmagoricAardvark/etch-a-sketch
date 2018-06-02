@@ -19,17 +19,23 @@
 		let mainDiv = document.querySelector(".container")
 		let body = document.querySelector("body")
 
-		let button = document.createElement("button")
-		button.classList.add("button")
-		button.textContent = "clear"
+		let clearButton = document.createElement("button")
+		clearButton.classList.add("button")
+		clearButton.textContent = "clear"
 
-		body.appendChild(button)
+		body.appendChild(clearButton)
 
 		let gridSizeButton = document.createElement("button")
 		gridSizeButton.classList.add("gridSizeButton")
 		gridSizeButton.textContent = "new grid size"
 
 		body.appendChild(gridSizeButton)
+
+		let colorButton = document.createElement("button")
+		colorButton.classList.add("colorButton")
+		colorButton.textContent = "random color mode"
+
+		body.appendChild(colorButton)
 
 
 
@@ -68,6 +74,7 @@
 			blockDiv[k].addEventListener("mouseenter", function() {numArray[k]++})
 			blockDiv[k].addEventListener("mouseenter", onMouseHover)
 
+
 			
 			
 		}
@@ -75,7 +82,7 @@
 
 		numArray = []
   		
-  		for (var i = 0; i < 256; i++) {
+  		for (var i = 0; i < 256*256; i++) {
    		    numArray[i]  = "num" + i;
    		}
 
@@ -95,23 +102,14 @@
 
 
 		function clearGrid() {
-			for (let k = 0; k < 256; k++) {
-			blockDiv[k].classList.remove("black10")
-			blockDiv[k].classList.remove("black20")
-			blockDiv[k].classList.remove("black30")
-			blockDiv[k].classList.remove("black40")
-			blockDiv[k].classList.remove("black50")
-			blockDiv[k].classList.remove("black60")
-			blockDiv[k].classList.remove("black70")
-			blockDiv[k].classList.remove("black80")
-			blockDiv[k].classList.remove("black90")
-			blockDiv[k].classList.remove("black100")
-
+			for (let k = 0; k < 256*256; k++) {
+			blockDiv[k].classList.add("white")
+			numArray.fill(0)
 
 
 			
 			}
-			numArray.fill(0)
+
 
 			for (let k = 0; k < 256; ++k) {
 			
@@ -119,16 +117,26 @@
 					
 			blockDiv[k].addEventListener("mouseenter", function() {numArray[k]++})
 			blockDiv[k].addEventListener("mouseenter", onMouseHover)
-			bl
+
 
 			
 			
-		}
+			}
 
 
 			
 		}
 		
+
+		function removeWhite() {
+
+				for (let k = 0; k < 256; ++k) {
+					blockDiv[k].classList.remove("white")
+			
+				}
+
+
+		}
 
 
 
@@ -159,7 +167,7 @@
 
 			let array2 = []
 
-			for (var k = 0; k < blcs*blcs; k++) {
+			for (let k = 0;k <= blcs*blcs; k++) {
 				array2.push(k)
 				let index2 = array2[k]
 
@@ -169,7 +177,7 @@
 
 
 			}
-
+			console.log(array2) 
 
 
 		}
@@ -191,19 +199,7 @@
 
 
 
-		function onMouseHover40() {
-
-
-			
-			numArray[40]++
-			console.log(numArray[40])
-			if (numArray[40] == 1) {
-				blockDiv[40].classList.add("black10")
-			} else if (numArray[40] == 2) {
-				blockDiv[40].classList.add("black20")
-			}
-		}
-
+	
 		
 
 		function onMouseHover() {
@@ -235,24 +231,60 @@
    			
    			}
 
-
-
 		}
-
-
-
-
 
 
 		
 
 
-		let selectButton = document.querySelector("button")
-		selectButton.addEventListener("click", clearGrid)
+		function randomRgbNum() {
+			let a = Math.floor(Math.random() * 255);
+			let b = Math.floor(Math.random() * 255);
+			let c = Math.floor(Math.random() * 255);
+
+			let color = "rgb(" + a + "," + b + "," +c +")"
+			return color
+
+		}
+
 
 	
+
+
+
+		function randomColor() {
+			for (let k = 0; k < 256*256; ++k) {
+					
+			blockDiv[k].addEventListener("mouseenter", function() {blockDiv[k].style.background = randomRgbNum()}) 
+				
+			}
+		}
+
+		//How to remove event listener with anonymous function
+
+
+		function randomColorOff () {
+			for (let k = 0; k < 256; ++k) {
+					
+			blockDiv[k].style.background = ""		
+			blockDiv[k].removeEventListener("mouseenter", function() {blockDiv[k].style.background = randomRgbNum()}) 
+				
+			 
+				
+			}
+
+		}
+		
+
+
+		let clearGridButton = document.querySelector("button")
+		clearGridButton.addEventListener("click", clearGrid)
+
+		gridSizeButton.addEventListener("click",clearGrid)
 		gridSizeButton.addEventListener("click", removeBlocks)
 		gridSizeButton.addEventListener("click", gridGenerator)
+	
+		colorButton.addEventListener("click", randomColor)
 
 
 		
