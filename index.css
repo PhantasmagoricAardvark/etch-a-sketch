@@ -28,7 +28,7 @@
 	background-color: red;
 }
 
-.button {
+.clearButton {
 	height: 100px;
 	width: 100px;
 	margin: 0 auto;
@@ -55,8 +55,16 @@
 	margin: 0 auto;
 	padding: 0;
 	position: absolute;
-	right: 8px;
-	top: 212px;
+
+}
+
+.colorButtonOff {
+	height: 100px;
+	width: 100px;
+	margin: 0 auto;
+	padding: 0;
+	position: absolute;
+	top: 110px;
 
 }
 

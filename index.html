@@ -20,7 +20,7 @@
 		let body = document.querySelector("body")
 
 		let clearButton = document.createElement("button")
-		clearButton.classList.add("button")
+		clearButton.classList.add("clearButton")
 		clearButton.textContent = "clear"
 
 		body.appendChild(clearButton)
@@ -36,6 +36,12 @@
 		colorButton.textContent = "random color mode"
 
 		body.appendChild(colorButton)
+
+		let colorButtonOff = document.createElement("button")
+		colorButtonOff.classList.add("colorButtonOff")
+		colorButtonOff.textContent = "random color mode off"
+
+		body.appendChild(colorButtonOff)
 
 
 
@@ -101,9 +107,19 @@
 
 
 
-		function clearGrid() {
+		function clearGrid() {	
 			for (let k = 0; k < 256*256; k++) {
-			blockDiv[k].classList.add("white")
+			blockDiv[k].classList.remove("black10")
+			blockDiv[k].classList.remove("black20")
+			blockDiv[k].classList.remove("black30")
+			blockDiv[k].classList.remove("black40")
+			blockDiv[k].classList.remove("black50")
+			blockDiv[k].classList.remove("black60")
+			blockDiv[k].classList.remove("black70")
+			blockDiv[k].classList.remove("black80")
+			blockDiv[k].classList.remove("black90")
+			blockDiv[k].classList.remove("black100")
+
 			numArray.fill(0)
 
 
@@ -128,16 +144,7 @@
 		}
 		
 
-		function removeWhite() {
-
-				for (let k = 0; k < 256; ++k) {
-					blockDiv[k].classList.remove("white")
-			
-				}
-
-
-		}
-
+	
 
 
 		function gridGenerator() {
@@ -247,33 +254,42 @@
 
 		}
 
-
-	
-
-
-
-		function randomColor() {
-			for (let k = 0; k < 256*256; ++k) {
-					
-			blockDiv[k].addEventListener("mouseenter", function() {blockDiv[k].style.background = randomRgbNum()}) 
-				
-			}
+		var randomColorListenerFunc = function() {
+			this.style.background = randomRgbNum()
 		}
 
-		//How to remove event listener with anonymous function
 
+		var randomColors = function() {
+			for (let k = 0; k < 256; ++k) {
+					
+			blockDiv[k].addEventListener("mouseenter", randomColorListenerFunc) 
+
+				
+			}
+
+
+		}
+
+
+
+		function randomColorOn() {	
+			randomColors()
+
+			
+		}
 
 		function randomColorOff () {
 			for (let k = 0; k < 256; ++k) {
-					
-			blockDiv[k].style.background = ""		
-			blockDiv[k].removeEventListener("mouseenter", function() {blockDiv[k].style.background = randomRgbNum()}) 
-				
-			 
-				
-			}
+			
+					blockDiv[k].style.background = ""		
+					blockDiv[k].removeEventListener("mouseenter", randomColorListenerFunc)
 
-		}
+			}
+		}	
+
+
+
+		
 		
 
 
@@ -284,7 +300,12 @@
 		gridSizeButton.addEventListener("click", removeBlocks)
 		gridSizeButton.addEventListener("click", gridGenerator)
 	
-		colorButton.addEventListener("click", randomColor)
+		colorButton.addEventListener("click", randomColorOn)
+
+		colorButtonOff.addEventListener("click", randomColorOff)
+
+
+
 
 
 		
