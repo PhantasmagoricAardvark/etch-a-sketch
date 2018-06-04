@@ -1,3 +1,15 @@
+
+
+html {
+	background: linear-gradient(#F0F8FF,#ffddb3) fixed;
+	min-height: 100%;
+}
+
+
+
+
+
+
 .container {
 	
 	width: 640px;
@@ -24,9 +36,7 @@
 }
 
 
-.color {
-	background-color: red;
-}
+
 
 .clearButton {
 	height: 100px;
@@ -34,7 +44,7 @@
 	margin: 0 auto;
 	padding: 0; 
 	float: right;
-
+	
 }
 
 .gridSizeButton {

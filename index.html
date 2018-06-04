@@ -117,7 +117,7 @@
 			blockDiv[k].classList.remove("black60")
 			blockDiv[k].classList.remove("black70")
 			blockDiv[k].classList.remove("black80")
-			blockDiv[k].classList.remove("black90")
+			blockDiv[k].classList.remove("black90") 	
 			blockDiv[k].classList.remove("black100")
 
 			numArray.fill(0)
@@ -260,7 +260,7 @@
 
 
 		var randomColors = function() {
-			for (let k = 0; k < 256; ++k) {
+			for (let k = 0; k < 256*256; ++k) {
 					
 			blockDiv[k].addEventListener("mouseenter", randomColorListenerFunc) 
 
@@ -279,7 +279,7 @@
 		}
 
 		function randomColorOff () {
-			for (let k = 0; k < 256; ++k) {
+			for (let k = 0; k < 256*256; ++k) {
 			
 					blockDiv[k].style.background = ""		
 					blockDiv[k].removeEventListener("mouseenter", randomColorListenerFunc)
@@ -302,7 +302,9 @@
 	
 		colorButton.addEventListener("click", randomColorOn)
 
+		colorButtonOff.addEventListener("click", clearGrid)
 		colorButtonOff.addEventListener("click", randomColorOff)
+
 
 
 
